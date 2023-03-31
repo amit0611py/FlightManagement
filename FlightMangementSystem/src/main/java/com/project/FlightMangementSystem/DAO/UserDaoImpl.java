@@ -12,6 +12,11 @@ import com.project.FlightMangementSystem.DTO.User;
 public class UserDaoImpl implements UserDao {
 
     private static final List<User> userList = new ArrayList<>();
+    
+    public UserDaoImpl() {
+        // Adding a default user to the userList
+        userList.add(new User("admin", BigInteger.valueOf(1), "admin", "admin", BigInteger.valueOf(1234567890), "admin@gmail.com"));
+    }
 
     @Override
     public User addUser(User user) {
