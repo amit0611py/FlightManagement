@@ -46,6 +46,14 @@ public class UserServiceImpl implements UserService {
     public void validateUser(User user) {
         validatePhoneNumber(user.getUserPhone());
         validateEmail(user.getUserEmail());
+        
+        if (user.getUserName() == null || user.getUserName().isEmpty()) {
+            throw new IllegalArgumentException("User name cannot be empty");
+        }
+        if (user.getUserPassword() == null || user.getUserPassword().isEmpty()) {
+            throw new IllegalArgumentException("User password cannot be empty");
+        }
+
         // Implement other validations
     }
     
@@ -61,6 +69,7 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("Invalid email");
         }
     }
+    
 
     // Implement other validation methods
 }

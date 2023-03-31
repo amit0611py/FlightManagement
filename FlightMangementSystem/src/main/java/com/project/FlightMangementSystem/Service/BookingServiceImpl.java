@@ -3,10 +3,13 @@ package com.project.FlightMangementSystem.Service;
 import java.math.BigInteger;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.project.FlightMangementSystem.DAO.BookingDao;
 import com.project.FlightMangementSystem.DTO.Booking;
 import com.project.FlightMangementSystem.DTO.Passenger;
 
+@Service
 public class BookingServiceImpl implements BookingService {
     private BookingDao bookingDao;
 

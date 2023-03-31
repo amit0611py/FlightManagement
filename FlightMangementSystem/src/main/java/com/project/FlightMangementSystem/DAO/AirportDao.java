@@ -1,19 +1,19 @@
-package com.project.FlightMangementSystem.DAO;
-
-import java.util.List;
-
-import com.project.FlightMangementSystem.DTO.Airport;
-
-public interface AirportDao {
-	
-	List<Airport> viewAirport();
-
-	Airport viewAirport(String airportCode);
-
-//	void addAirport(Airport airport);
+//package com.project.FlightMangementSystem.DAO;
 //
-//	void deleteAirport(String airportCode);
+//import java.util.List;
 //
-//	void updateAirport(Airport airport);
-
-}
+//import com.project.FlightMangementSystem.DTO.Airport;
+//
+//public interface AirportDao {
+//	
+//	List<Airport> viewAirport();
+//
+//	Airport viewAirport(String airportCode);
+//
+////	void addAirport(Airport airport);
+////
+////	void deleteAirport(String airportCode);
+////
+////	void updateAirport(Airport airport);
+//
+//}

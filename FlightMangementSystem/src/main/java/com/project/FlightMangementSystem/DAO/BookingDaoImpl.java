@@ -1,11 +1,15 @@
 package com.project.FlightMangementSystem.DAO;
 
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 
 import com.project.FlightMangementSystem.DTO.Booking;
 
+@Repository
 public class BookingDaoImpl implements BookingDao {
     private List<Booking> bookingList;
 

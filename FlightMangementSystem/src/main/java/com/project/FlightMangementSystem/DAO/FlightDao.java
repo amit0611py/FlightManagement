@@ -15,5 +15,8 @@ public interface FlightDao {
     List<Flight> viewFlight();
 
     void deleteFlight(BigInteger flightNumber);
+    
+//    Flight updateFlight(Flight flight);
+    
 }
 

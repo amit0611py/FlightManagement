@@ -3,10 +3,13 @@ package com.project.FlightMangementSystem.Service;
 import java.math.BigInteger;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.project.FlightMangementSystem.DTO.Booking;
 import com.project.FlightMangementSystem.DTO.Passenger;
 import com.project.FlightMangementSystem.Exception.InvalidBookingException;
 import com.project.FlightMangementSystem.Exception.InvalidPassengerException;
+
 
 public interface BookingService {
     Booking addBooking(Booking booking) throws InvalidBookingException;

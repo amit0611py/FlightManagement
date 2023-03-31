@@ -15,6 +15,7 @@ public class User {
     private String userPassword;
     private BigInteger userPhone;
     private String userEmail;
+    
 	public String getUserType() {
 		return userType;
 	}
@@ -57,7 +58,16 @@ public class User {
 				+ userPassword + ", userPhone=" + userPhone + ", userEmail=" + userEmail + "]";
 	}
 	
-	public User() {}
+	public User() {
+
+//	        this.userType = "admin";
+//	        this.userId = new BigInteger("123456");
+//	        this.userName = "admin";
+//	        this.userPassword = "admin123";
+//	        this.userPhone = new BigInteger("9876543210");
+//	        this.userEmail = "admin@example.com";
+//	    
+	}
 	
 	public User(String userType, BigInteger userId, String userName, String userPassword, BigInteger userPhone,
 			String userEmail) {

@@ -5,11 +5,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.project.FlightMangementSystem.DTO.Airport;
 import com.project.FlightMangementSystem.DTO.Flight;
 import com.project.FlightMangementSystem.DTO.Schedule;
 import com.project.FlightMangementSystem.DTO.ScheduledFlight;
 
+@Repository
 public class ScheduledFlightDaoImpl implements ScheduledFlightDao {
 
     private List<ScheduledFlight> scheduledFlightList = new ArrayList<>();

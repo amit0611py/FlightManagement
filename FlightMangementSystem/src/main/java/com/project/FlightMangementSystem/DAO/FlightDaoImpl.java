@@ -4,8 +4,11 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.project.FlightMangementSystem.DTO.Flight;
 
+@Repository
 public class FlightDaoImpl implements FlightDao {
 
     private List<Flight> flightList = new ArrayList<>();

@@ -15,8 +15,9 @@ public class UserDaoImpl implements UserDao {
     
     public UserDaoImpl() {
         // Adding a default user to the userList
-        userList.add(new User("admin", BigInteger.valueOf(1), "admin", "admin", BigInteger.valueOf(1234567890), "admin@gmail.com"));
+        userList.add(new User("admin", BigInteger.valueOf(1), "admin", "admin", BigInteger.valueOf(1234567890), "admin@example.com"));
     }
+    
 
     @Override
     public User addUser(User user) {
