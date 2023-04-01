@@ -12,7 +12,7 @@ import com.project.FlightMangementSystem.Exception.InvalidPassengerException;
 
 
 public interface BookingService {
-    Booking addBooking(Booking booking) throws InvalidBookingException;
+    Booking addBooking(Booking booking) throws InvalidBookingException, InvalidPassengerException;
     Booking modifyBooking(Booking booking) throws InvalidBookingException;
     List<Booking> viewBooking(BigInteger bookingId) throws InvalidBookingException;
     List<Booking> viewBooking();

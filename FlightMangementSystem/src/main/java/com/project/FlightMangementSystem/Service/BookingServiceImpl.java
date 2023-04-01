@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.project.FlightMangementSystem.DAO.BookingDao;
 import com.project.FlightMangementSystem.DTO.Booking;
 import com.project.FlightMangementSystem.DTO.Passenger;
+import com.project.FlightMangementSystem.Exception.InvalidPassengerException;
 
 @Service
 public class BookingServiceImpl implements BookingService {
@@ -18,7 +19,10 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking addBooking(Booking booking) {
+    public Booking addBooking(Booking booking) throws InvalidPassengerException{
+    	for (Passenger passenger : booking.getPassengerList()) {
+    		validatePassenger(passenger);
+        }
         return bookingDao.addBooking(booking);
     }
 
@@ -48,7 +52,24 @@ public class BookingServiceImpl implements BookingService {
     }
     
     @Override
-    public void validatePassenger(Passenger passenger) {
-        // validation logic
+    public void validatePassenger(Passenger passenger) throws InvalidPassengerException {
+        // Validation for Aadhaar Number
+        BigInteger passengerUIN = passenger.getPassengerUIN();
+        if (passengerUIN == null) {
+            throw new InvalidPassengerException("Passenger UIN cannot be null");
+        }
+        if (passengerUIN.toString().length() != 12) {
+            throw new InvalidPassengerException("Passenger UIN should be a 12-digit Aadhaar Number");
+        }
+        // Check if passengerUIN already exists in the bookings
+        List<Booking> bookings = bookingDao.viewBooking();
+        for (Booking booking : bookings) {
+            List<Passenger> passengers = booking.getPassengerList();
+            for (Passenger p : passengers) {
+                if (passengerUIN.equals(p.getPassengerUIN())) {
+                    throw new InvalidPassengerException("A passenger with this UIN already exists in another booking");
+                }
+            }
+        }
     }
 }

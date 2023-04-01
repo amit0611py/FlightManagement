@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.FlightMangementSystem.DTO.Booking;
 import com.project.FlightMangementSystem.Exception.InvalidBookingException;
+import com.project.FlightMangementSystem.Exception.InvalidPassengerException;
 import com.project.FlightMangementSystem.Service.BookingService;
 
 @RestController
@@ -31,7 +32,7 @@ public class BookingController {
         try {
             Booking newBooking = bookingService.addBooking(booking);
             return new ResponseEntity<>(newBooking, HttpStatus.CREATED);
-        } catch (InvalidBookingException e) {
+        } catch (InvalidBookingException | InvalidPassengerException e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
