@@ -21,9 +21,10 @@ public class AirportServiceImpl implements AirportService {
         airportList.add(new Airport("DEL", "Indira Gandhi International Airport", "New Delhi"));
         airportList.add(new Airport("BOM", "Chhatrapati Shivaji International Airport", "Mumbai"));
         airportList.add(new Airport("MAA", "Chennai International Airport", "Chennai"));
-        airportList.add(new Airport("BAN", "Bangalore International Airport","Bangalore")):
-        airportList.add(new Airport("HIS","Hisar International Airport","Hisar"));
+        airportList.add(new Airport("BAN", "Bangalore International Airport", "Bangalore"));
+        airportList.add(new Airport("HIS", "Hisar International Airport", "Hisar"));
         airportList.add(new Airport("PUN", "Pune International Airport", "Pune"));
+
     }
 
     @Override

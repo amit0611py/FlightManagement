@@ -11,7 +11,7 @@ import com.project.FlightMangementSystem.DTO.Flight;
 import com.project.FlightMangementSystem.DTO.Schedule;
 import com.project.FlightMangementSystem.DTO.ScheduledFlight;
 
-//@Repository
+@Repository
 public interface ScheduledFlightDao {
     ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight);
 
@@ -25,17 +25,3 @@ public interface ScheduledFlightDao {
 
     void deleteScheduledFlight(BigInteger flightNumber);
 }
-
-//public interface ScheduledFlightDao {
-//    ScheduledFlight scheduleFlight(ScheduledFlight scheduledFlight);
-//
-//    List<ScheduledFlight> viewScheduledFlights(Airport sourceAirport, Airport destinationAirport, LocalDate date);
-//
-//    ScheduledFlight viewScheduledFlightById(BigInteger flightNumber);
-//
-//    List<ScheduledFlight> viewScheduledFlights();
-//
-//    ScheduledFlight modifyScheduledFlight(Flight flight, Schedule schedule, int availableSeats);
-//
-//    void deleteScheduledFlight(BigInteger flightNumber);
-//}
